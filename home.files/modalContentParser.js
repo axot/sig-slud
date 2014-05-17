@@ -1,6 +1,7 @@
-$.get("./69th_sig_j.html", function(response)
+$('#testid').load("./69th_sig_j.html", function(response)
 { 
-  modalContentParser(html2Text(response));
+  cont = modalContentParser(html2Text(response));
+  $('#testid').html($('#testid').html().replace(cont.date, '<h1 style="color:red;">' + cont.date + '</h1>'));
 });
 
 function html2Text(raw)
@@ -46,10 +47,10 @@ function modalContentParser(raw)
   content = Object(content);
   
   valForKeyWithRegex(content, 'counter', /第(\d+)回/, raw);
-  valForKeyWithRegex(content, 'date', /日.*時：(.*)/, raw, true);
-  valForKeyWithRegex(content, 'place', /会[\s　]*場：([\s\S]*)参加費/, raw, true, true);
-  valForKeyWithRegex(content, 'place', /場[\s　]*所：([\s\S]*)参加費/, raw, true, true);
+  valForKeyWithRegex(content, 'date', /日[\s　]*時：(.*)/, raw);
+  valForKeyWithRegex(content, 'place', /会[\s　]*場：([\s\S]*)参加費/, raw);
+  valForKeyWithRegex(content, 'place', /場[\s　]*所：([\s\S]*)参加費/, raw);
 
-  console.log(content);
   return content;
 }
+
