@@ -1,0 +1,4 @@
+name: sig-slud
+markdown: redcarpet
+pygments: true
+baseurl: /sig-slud

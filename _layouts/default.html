@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+
+        <link rel=stylesheet href="{{ site.baseurl }}/css/style.css">
+        <link rel=stylesheet href="{{ site.baseurl }}/css/modal.css">
+        <meta name="viewport" content="">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+    <!-- Modal template -->
+    <div id="modal">
+      <div class="container"><p class="article"></p></div>
+    </div>
+    <!-- end Modal -->
+
+    <div class="content">
+      <section class="head">
+        <h2>
+          <span>
+            <a href="http://www.ai-gakkai.or.jp/jsai/">人工知能学会</a>
+          </span>
+          <span>言語・音声理解と対話処理研究会</span>
+          <span>SIG-SLUD</span>
+        </h2>
+      </section>
+      <hr class="style-six">
+
+      <!-- right nav -->
+      <section id="side-navigation">
+        <nav>
+          <ul>
+            <li><a href="news.html">新着情報</a></li>
+            <li><a href="field.html">主要な研究分野</a></li>
+            <li><a href="staff.html">研究連絡委員リスト</a></li>
+            <li><a href="submission.html">発表申込のご案内</a></li>
+            <li><a href="http://www.ai-gakkai.or.jp/jsai/sig/">研究会登録のご案内</a></li>
+
+            <div class="t10b2">発表文献リスト (bibtex format)</div>
+            <li><a href="SLUD-1.bib.html">Vol.1-43 (1992-2004年度) </a></li>
+            <li><a href="SLUD-2.bib.html">Vol.44-52 (2005年度-2007年度)</a></li>
+            <li><a href="http://www.slp.is.ritsumei.ac.jp/dtag/">談話・対話研究におけるコーパス利用研究グループ</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      {{ content }}
+
+      <div class="footer">
+        <div class="contact">
+          <p>
+          Copyright &copy; 2014 Nelab All Rights Reserved.<br />
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Java script -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/js/modal.js"></script>
+    <!--[if lte IE 9]>
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+      <script src="home.files/ie9-transition.js"></script>
+    <![endif]-->
+    <script>
+      $(".accordion ").click(function(){
+          $(this).next("ul").slideToggle();
+          $(this).toggleClass("open");
+      });
+    </script>
+    </body>
+</html>
