@@ -1,5 +1,5 @@
 name: sig-slud
 markdown: redcarpet
 pygments: true
-baseurl: ''
-#baseurl: /sig-slud
+#baseurl: ''
+baseurl: /sig-slud
